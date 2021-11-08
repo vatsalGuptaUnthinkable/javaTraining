@@ -1,4 +1,8 @@
-import java.util.*;
+import java.util.Scanner;
+import java.util.List;
+import java.util.Map;
+import java.util.ArrayList;
+import java.util.HashMap;
 public class solutionTwo {
     public static void main(String args[]){
         Scanner ob = new Scanner(System.in);
