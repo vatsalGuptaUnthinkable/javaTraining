@@ -5,15 +5,23 @@
  xsi:schemaLocation="http://www.springframework.org/schema/beans
  http://www.springframework.org/schema/beans/spring-beans.xsd">
  
- 
- 
  <bean  class="com.unthinkable.practice.Student" name = "student1">
+ 
  <property name="id">
  <value>1</value>
  </property>
+ 
  <property name="name">
  <value>Vatsal</value>
  </property>
+ 
+ <property name="lt">
+ <list>
+ <value>111111</value>
+ <value>222222</value>
+ </list>
+ </property>
+ 
  </bean>
  
  
@@ -21,8 +29,16 @@
  <property name="id">
  <value>2</value>
  </property>
+ 
  <property name="name">
  <value>Deepak</value>
+ </property>
+ 
+ <property name="lt">
+ <list>
+ <value>111111</value>
+ <value>222222</value>
+ </list>
  </property>
  </bean>
  
