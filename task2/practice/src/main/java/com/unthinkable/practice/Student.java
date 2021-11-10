@@ -7,16 +7,21 @@ public class Student {
 	int id;
 	String name;
 	ArrayList<Integer> lt;
-	
+	Address ad;
 	public Student() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Student(int id, String name, ArrayList<Integer> lt) {
+	public Student(int id, String name, ArrayList<Integer> lt, Address ad) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.lt = lt;
+		this.ad = ad;
+	}
+	@Override
+	public String toString() {
+		return "Student [id=" + id + ", name=" + name + ", lt=" + lt + ", ad=" + ad + "]";
 	}
 	public int getId() {
 		return id;
@@ -36,9 +41,11 @@ public class Student {
 	public void setLt(ArrayList<Integer> lt) {
 		this.lt = lt;
 	}
-	@Override
-	public String toString() {
-		return "Student [id=" + id + ", name=" + name + ", lt=" + lt + "]";
+	public Address getAd() {
+		return ad;
+	}
+	public void setAd(Address ad) {
+		this.ad = ad;
 	}
 	
 	
