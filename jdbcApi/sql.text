@@ -1,0 +1,6 @@
+CREATE TABLE Emp(
+id int NOT NULL AUTO_INCREMENT,
+name Varchar(155) not null,
+age varchar(20) not null ,
+Primary Key(id)
+);
