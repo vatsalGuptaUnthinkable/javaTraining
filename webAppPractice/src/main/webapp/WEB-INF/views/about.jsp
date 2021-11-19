@@ -4,9 +4,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>About page</title>
 </head>
 <body>
-This is the about page of this oragnisation
+<% String name = (String) request.getAttribute("name");  %>
+<h1> Hey my name is <%=name %> And this is the about page of my organization  </h1>
 </body>
 </html>
