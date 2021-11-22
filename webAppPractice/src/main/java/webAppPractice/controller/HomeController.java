@@ -4,10 +4,13 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+
+import webAppPractice.Entity.User;
 
 @Controller
 @RequestMapping("/homeController")
@@ -40,4 +43,12 @@ public class HomeController {
 		
 		return "success";
 		}
+	
+	public String reqNewUser(@ModelAttribute  User user , Model mod) {
+		
+		mod.addAttribute(user);
+		
+		return "success";
+		
+	}
 }
