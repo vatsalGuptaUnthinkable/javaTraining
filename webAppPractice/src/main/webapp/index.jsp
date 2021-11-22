@@ -8,5 +8,6 @@
 Object name = request.getAttribute("name");
 %>
 <h1> Hello my name is <%= name  %></h1>
+
 </body>
 </html>
