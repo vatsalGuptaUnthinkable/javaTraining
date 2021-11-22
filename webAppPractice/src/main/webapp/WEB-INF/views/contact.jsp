@@ -10,14 +10,14 @@
 	   <div class ="container" style ="text-align : center">
 	   
 	   
-	    <form  action = "/processFrom"  method = "post">
+	    <form  action = "/processForm"  method = "post">
 	    <h3>user Name</h3>
 	    <input type ="text" name = "userName" id = "name"/>
 	    <br>
 	    <h3>Password </h3>
 	    <input type ="password" name = "password" id = "password"/>
 	    
-	    
+	    <submit>Click here to submit your details</submit>
 	    
 	  	</form>
 	   

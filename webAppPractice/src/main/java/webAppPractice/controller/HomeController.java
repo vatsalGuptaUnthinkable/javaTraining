@@ -1,9 +1,12 @@
 package webAppPractice.controller;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -27,9 +30,14 @@ public class HomeController {
 		return md;
 	}
 	
-	@RequestMapping( path = "/processForm" , method = RequestMethod.POST)
-	public String processForm() {
-	
-		return "";
+	@RequestMapping( path = "processForm" , method = RequestMethod.POST)
+	public String processForm(@RequestParam("userName") String name , @RequestParam("password") String password, Model mod) {
+		
+		
+		System.out.println("The name is  = " + name + " the password is  = " + password);
+		mod.addAttribute("name",name);
+		mod.addAttribute("password",password);
+		
+		return "success";
 		}
 }
