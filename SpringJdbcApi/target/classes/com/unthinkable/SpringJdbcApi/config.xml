@@ -10,7 +10,7 @@
     http://www.springframework.org/schema/context/spring-context-3.0.xsd">
     
     <bean name = "ds" class = "org.springframework.jdbc.datasource.DriverManagerDataSource" > 
-    <property name ="driverClassName"><value> com.mysql.jdbc.Driver </value> </property>
+    <property name ="driverClassName"><value> com.mysql.cj.jdbc.Driver </value> </property>
     <property name ="url"><value> jdbc:mysql://localhost:3306/SpringJDBC</value> </property>
     <property name ="username"><value> root </value> </property>
     <property name ="password"><value> hrhk </value> </property>
@@ -23,4 +23,17 @@
      </property>
     </bean>
     
+    
+    <bean name ="studentDaoClass"  class ="DAO.studentDaoImpl" >
+    <property name = "jd"> 
+    <ref bean ="jdT" />
+    </property>
+     </bean>
+     
+     
+     <bean name = "st1" class = "entity.Student"> 
+     <property name ="id" > <value> 1</value> </property>
+      <property name ="name" > <value>Vatsal </value> </property>
+       <property name ="city" > <value> Kanpur</value> </property>
+     </bean>
     </beans>
