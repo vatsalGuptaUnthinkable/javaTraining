@@ -9,21 +9,18 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context-3.0.xsd">
     
-    
-    <bean name ="ds"  class ="org.springframework.jdbc.datasource.DriverManager.DataSource" >
-    
-    <property name = "DriverClassName" > <value> com.mysql.jdbc.Driver </value> </property>
-    <property name = "url"> <value> jdbc:mysql://localhost:3306/SpringJDBC</value> </property>
-    <property name = "username"> <value>root</value> </property>
-    <property name = "pasword"> <value>hrhk</value> </property>
-    
+    <bean name = "ds" class = "org.springframework.jdbc.datasource.DriverManagerDataSource" > 
+    <property name ="driverClassName"><value> com.mysql.jdbc.Driver </value> </property>
+    <property name ="url"><value> jdbc:mysql://localhost:3306/SpringJDBC</value> </property>
+    <property name ="username"><value> root </value> </property>
+    <property name ="password"><value> hrhk </value> </property>
     </bean>
     
     
-    <bean name = "JdbcTemplate"  class ="org.springframework.jdbc.core.JdbcTemplate"  >
-    	<property name = "datasource" > 
-    		<ref bean = "ds" /> 
-    	</property>
+    <bean name ="jdT"  class = "org.springframework.jdbc.core.JdbcTemplate"> 
+    <property name = "dataSource">
+    <ref bean ="ds" />
+     </property>
     </bean>
     
     </beans>
