@@ -15,5 +15,7 @@
         <mapping class = "org.unthinkable.Student" />
         <mapping class = "org.unthinkable.Student" />
         <mapping class="org.unthinkable.newStudent"  />
+        <mapping class = "org.map.Question" />
+        <mapping class = "org.map.Answer" />
     </session-factory>
 </hibernate-configuration>
