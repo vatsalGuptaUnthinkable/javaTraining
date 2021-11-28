@@ -30,7 +30,7 @@ public class Student {
     private String lastName;
     @Column(name ="email_address" , nullable = false)
     private  String emailId;
-    private String gaurdianName;
-    private String gaurdianEmail;
-    private String gaurdianMobile;
+
+    @Embedded
+    private Gaurdian gaurdian;
 }
