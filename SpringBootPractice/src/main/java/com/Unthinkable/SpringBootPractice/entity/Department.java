@@ -1,9 +1,7 @@
 package com.Unthinkable.SpringBootPractice.entity;
-
-
 import lombok.*;
-
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 @Data
@@ -12,11 +10,11 @@ import javax.persistence.*;
 @ToString
 @Builder
 public class Department {
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long DepartmentId;
-    private String deparmentName;
+    @NotBlank(message = "Department Name cannot be blank")
+    private String departmentName;
     private String departmentAddress;
     private String departmentCode;
 

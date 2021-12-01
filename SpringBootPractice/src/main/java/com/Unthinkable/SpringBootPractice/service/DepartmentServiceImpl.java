@@ -1,9 +1,11 @@
 package com.Unthinkable.SpringBootPractice.service;
+import com.Unthinkable.SpringBootPractice.Error.DepartmentNotFound;
 import com.Unthinkable.SpringBootPractice.entity.Department;
 import com.Unthinkable.SpringBootPractice.repository.DepartmentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class DepartmentServiceImpl implements DepartmentService{
@@ -23,8 +25,12 @@ public class DepartmentServiceImpl implements DepartmentService{
     }
 
     @Override
-    public Department fetchDepartmentById(Long departmentId) {
-        return departmentRepository.findById(departmentId).get();
+    public Department fetchDepartmentById(Long departmentId) throws DepartmentNotFound {
+        Optional<Department> byId = departmentRepository.findById(departmentId);
+        if(!byId.isPresent()){
+            throw new DepartmentNotFound("Hey Kindly Check the Id Since this department is not in our database");
+        }
+        return byId.get();
     }
 
     @Override
@@ -36,8 +42,8 @@ public class DepartmentServiceImpl implements DepartmentService{
     public Department updateById(Long departmentId, Department department) {
         Department department1 = departmentRepository.findById(departmentId).get();
 
-        if(department1.getDeparmentName() != null && !(department1.getDeparmentName().equalsIgnoreCase(department.getDeparmentName()))){
-            department1.setDeparmentName(department.getDeparmentName());
+        if(department1.getDepartmentName() != null && !(department1.getDepartmentName().equalsIgnoreCase(department.getDepartmentName()))){
+            department1.setDepartmentName(department.getDepartmentName());
         }
         if(department1.getDepartmentCode() != null && !(department1.getDepartmentCode().equalsIgnoreCase(department.getDepartmentCode()))){
             department1.setDepartmentCode(department.getDepartmentCode());
@@ -49,8 +55,12 @@ public class DepartmentServiceImpl implements DepartmentService{
     }
 
     @Override
-    public Department fetchDepartmentByName(String name) {
-        return departmentRepository.findByDeparmentName(name);
+    public Department fetchDepartmentByName(String name) throws DepartmentNotFound {
+        Department byDepartmentName = departmentRepository.findByDepartmentName(name);
+        if(byDepartmentName == null){
+            throw new DepartmentNotFound("Hey Kindly check the name since this name is not in our database");
+        }
+        return byDepartmentName;
     }
 
 
