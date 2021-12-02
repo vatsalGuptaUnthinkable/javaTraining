@@ -1,26 +1,29 @@
 package com.Unthinkable.SpringBootPractice.entity;
 
+
 import lombok.*;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import javax.persistence.*;
 
 @Entity
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
-@Builder
+@NoArgsConstructor
 @ToString
+@Builder
 public class Employee {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long employeeId;
-    private String employeeFname;
-    private String employeeLname;
+    private long Eid;
+    private String EmployeeName;
+    private String EmployeeRole;
 
-
-    @ManyToOne
-    @JoinColumn(name = "department_department_id")
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "departmentId" , nullable = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private Department department;
 
-    
 }
