@@ -15,7 +15,5 @@ public class Department {
     private long DepartmentId;
     @NotBlank(message = "Department Name cannot be blank")
     private String departmentName;
-    private String departmentAddress;
-    private String departmentCode;
-
+    private String departmentHead;
 }

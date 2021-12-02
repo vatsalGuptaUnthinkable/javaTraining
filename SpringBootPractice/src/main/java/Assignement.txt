@@ -1,0 +1,15 @@
+Assignment:
+Create a simple Spring Boot based application with covering following
+requirements:
+As an owner of an organization, I want to manage all the employees working
+with the organization. My organization have several departments. An employee
+will always belongs to at least one department. You can further explore this
+requirement and wok on following items:
+1. We need to expose Rest APIs managing various aspects of organization. For
+example create/update/fetch Employees and Departments.
+2. Implement test cases for each of the Rest APIs.
+3. Use H2DB or some other in memory database.
+4. API documentation with tool like Swager
+5. Implement Spring JPA Auditing
+Once you guys are done submit your code on Github and share the link with me. I
+will review and share my feedback with you guys. Next action item would be to

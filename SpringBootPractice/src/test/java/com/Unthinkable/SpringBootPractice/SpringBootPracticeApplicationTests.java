@@ -9,6 +9,6 @@ class SpringBootPracticeApplicationTests {
 
 	@Test
 	public void test(){
-		
+
 	}
 }
