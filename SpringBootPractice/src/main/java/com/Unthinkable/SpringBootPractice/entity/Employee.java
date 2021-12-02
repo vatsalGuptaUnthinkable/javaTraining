@@ -18,10 +18,10 @@ public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long Eid;
-    private String EmployeeName;
-    private String EmployeeRole;
+    private String employeeName;
+    private String employeeRole;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne
     @JoinColumn(name = "departmentId" , nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Department department;
